@@ -1,4 +1,99 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/typography" as *;
+@use "../styles/partials/mixins" as *;
+
 html {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
+	font-size: 100%;
+}
+body {
+	width: 100%;
+	margin: auto;
+	font-family: Avenir Next;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 100%;
+}
+ul {
+	list-style-type: none;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $primary-background-color-1;
+	width: auto;
+	padding: 0rem 1rem 0rem 1rem;
+	&__logo {
+		width: 15rem;
+		padding: 2rem;
+	}
+	&__item {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		color: $primary-text-color-1;
+	}
+	&__list {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-left: 0;
+		width: auto;
+
+		&--nav-link {
+			color: $primary-text-color-1;
+			padding: 0rem 3rem 2rem 3rem;
+		}
+	}
+}
+.hero {
+	background-image: url("../assets/images/hero-bio.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 0rem 1rem 0rem 1rem;
+	height: 26.5rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	&__title {
+		color: $primary-text-color-1;
+		@include title;
+	}
+}
+.about {
+	padding: 0rem 1rem 1rem 1rem;
+	&__title {
+		@include title;
+		&--paragraph {
+			font-size: 1.5rem;
+			font-weight: bold;
+			margin: 2.5rem 0 1rem 0;
+		}
+	}
+	&__image {
+		width: 100%;
+	}
+	&__quote {
+		font-size: 1.5rem;
+		font-weight: bold;
+		line-height: 2.5rem;
+	}
+	&__paragraph {
+		font-size: 1.25rem;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+}
+.photo-gallery {
+	background-color: $alternative-background-color-1;
+	padding: 0rem 1rem 1rem 1rem;
+	&__title {
+		@include title;
+	}
 }
