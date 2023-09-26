@@ -41,7 +41,6 @@ p {
 			flex-direction: row;
 			width: 100%;
 			justify-content: flex-start;
-			margin-left: 5.75rem;
 		}
 	}
 	&__logo {
@@ -49,6 +48,7 @@ p {
 		padding: 2rem 0rem 0rem 0rem;
 		@include tablet {
 			margin-bottom: 2rem;
+			padding-left: 3.25rem;
 		}
 	}
 	&__nav {
@@ -59,7 +59,6 @@ p {
 		@include tablet {
 			justify-content: flex-start;
 			width: 50%;
-			// margin: 0rem 1rem 0rem 1rem;
 		}
 	}
 	&__item {
@@ -73,17 +72,17 @@ p {
 			border-bottom: solid 3px;
 			padding: 0rem 0rem 1rem 0rem;
 			@include tablet {
-				padding: 1rem 0rem 0rem 0rem;
+				padding: 1.25rem 0rem 0rem 0rem;
 			}
 		}
 		&--active-font {
-			font-weight: bolder;
+			font-weight: 600;
 		}
 		&--non-active {
 			color: $primary-text-color-2;
 			padding: 0rem 0rem 1rem 0rem;
 			@include tablet {
-				padding: 1rem 0rem 3rem 0rem;
+				padding: 1.25rem 0rem 3rem 0rem;
 			}
 		}
 		@include tablet {
@@ -92,10 +91,11 @@ p {
 	}
 }
 .hero {
-	background-image: url("../assets/images/hero-bio.jpg");
+	background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+		url("../assets/images/hero-bio.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding: 0rem 1rem 0rem 1rem;
+	// padding: 0rem 1rem 0rem 1rem;
 	height: 20rem;
 	width: 100%;
 	display: flex;
@@ -104,7 +104,6 @@ p {
 	@include tablet {
 		height: 30rem;
 	}
-	// @include heroOverlay;
 	&__title {
 		color: $primary-text-color-1;
 		@include title;
@@ -115,9 +114,6 @@ p {
 			margin: 2.25rem;
 		}
 	}
-	// &__title-container::before {
-	// 	@include heroOverlay;
-	// }
 }
 .about {
 	&__title {
@@ -129,10 +125,10 @@ p {
 		}
 		&--paragraph {
 			font-size: 1.5rem;
-			font-weight: bold;
+			font-weight: 400;
 			margin: 2.5rem 0 1rem 0;
 			@include tablet {
-				font-weight: 900;
+				font-weight: 600;
 			}
 		}
 	}
@@ -154,7 +150,7 @@ p {
 	}
 	&__quote {
 		font-size: 1.5rem;
-		font-weight: bold;
+		font-weight: 600;
 		line-height: 2.5rem;
 		padding-top: 1rem;
 		&--author {
@@ -192,7 +188,6 @@ p {
 		@include title;
 		@include tablet {
 			padding: 3rem 2.25rem 1rem 3rem;
-			// padding: 0rem;
 		}
 	}
 	&__image {
@@ -233,18 +228,24 @@ p {
 		}
 		&--title {
 			@include title;
+			@include tablet {
+				padding-right: 2rem;
+			}
 		}
 		&--images {
 			display: flex;
 			flex-direction: row;
 			justify-content: start;
 			flex-wrap: wrap;
-			// 	@include tablet {
-			// 	// 	align-self: flex-start;
-			// 	// }
+			@include tablet {
+				padding-right: 0rem;
+			}
 		}
 		&--icon {
 			margin: 1rem 3.5rem 0rem 0rem;
+			@include tablet {
+				margin: 1rem 2rem 0rem 0rem;
+			}
 		}
 		&--image-size {
 			height: 2rem;
@@ -257,15 +258,36 @@ p {
 			}
 		}
 	}
+	&__social-container {
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+			flex-wrap: nowrap;
+		}
+	}
 	&__contact {
 		padding: 1rem 0rem 3rem 0rem;
+		@include tablet {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+		}
 	}
 	&__contact-item {
 		padding: 0rem 0rem 3rem 0rem;
+		@include tablet {
+			padding-right: 2rem;
+		}
 		&--title {
 			padding: 0rem;
 			margin: 0rem;
 			line-height: 1.5rem;
+			font-weight: 600;
+			@include tablet {
+				font-weight: 500;
+			}
 		}
 		&--paragraph-top {
 			padding: 1rem 0rem 0rem 0rem;
@@ -281,6 +303,9 @@ p {
 		padding: 0rem 0rem 2rem 0rem;
 		&--logo {
 			@include logo;
+			@include tablet {
+				display: none;
+			}
 		}
 		&--logo-container {
 			padding: 0rem 0rem 1rem 0rem;
