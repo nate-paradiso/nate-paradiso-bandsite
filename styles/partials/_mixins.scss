@@ -3,3 +3,10 @@
 	font-weight: 900;
 	font-size: 2.5rem;
 }
+@mixin logo {
+	width: 180px;
+}
+@mixin paragraph {
+	margin: 0;
+	line-height: 1.5rem;
+}

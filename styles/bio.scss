@@ -20,6 +20,9 @@ body {
 ul {
 	list-style-type: none;
 }
+p {
+	@include paragraph;
+}
 
 .header {
 	display: flex;
@@ -30,7 +33,7 @@ ul {
 	width: auto;
 	padding: 0rem 1rem 0rem 1rem;
 	&__logo {
-		width: 15rem;
+		@include logo;
 		padding: 2rem;
 	}
 	&__item {
@@ -67,7 +70,7 @@ ul {
 	}
 }
 .about {
-	padding: 0rem 1rem 0rem 1rem;
+	padding: 0rem 1rem 2rem 1rem;
 	&__title {
 		@include title;
 		&--paragraph {
@@ -106,10 +109,11 @@ ul {
 	flex-direction: column;
 	padding: 1.5rem 1rem 0rem 1rem;
 	background-color: $primary-background-color-1;
+	color: $primary-text-color-1;
 	&__social {
+		padding: 0rem 0rem 1.5rem 0rem;
 		&--title {
 			@include title;
-			color: $primary-text-color-1;
 		}
 		&--images {
 			display: flex;
@@ -120,6 +124,39 @@ ul {
 		&--icon {
 			height: 2rem;
 			margin: 1rem 3.5rem 0rem 0rem;
+		}
+		&--logo {
+			display: none;
+			@include logo;
+		}
+	}
+	&__contact {
+		padding: 1rem 0rem 1rem 0rem;
+	}
+	&__contact-item {
+		padding: 0rem 0rem 3rem 0rem;
+		&--title {
+			padding: 0rem;
+			margin: 0rem;
+			line-height: 1.5rem;
+		}
+		&--paragraph-top {
+			padding: 1rem 0rem 0rem 0rem;
+			margin: 0rem 0rem 0rem 0rem;
+		}
+		&--paragraph-bottom {
+			padding: 0rem 0rem 1rem 0rem;
+			margin: 0rem 0rem 0rem 0rem;
+		}
+	}
+	&__copy {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 0rem 0rem 2rem 0rem;
+		&--logo {
+			@include logo;
+			padding: 0rem 0rem 1rem 0rem;
 		}
 	}
 }
