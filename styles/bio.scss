@@ -42,6 +42,10 @@ p {
 			width: 100%;
 			justify-content: flex-start;
 		}
+		@include desktop {
+			margin: auto;
+			width: 90%;
+		}
 	}
 	&__logo {
 		@include logo;
@@ -95,7 +99,6 @@ p {
 		url("../assets/images/hero-bio.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	// padding: 0rem 1rem 0rem 1rem;
 	height: 20rem;
 	width: 100%;
 	display: flex;
@@ -103,6 +106,9 @@ p {
 	align-items: center;
 	@include tablet {
 		height: 30rem;
+	}
+	@include desktop {
+		height: 50vw;
 	}
 	&__title {
 		color: $primary-text-color-1;
@@ -113,6 +119,9 @@ p {
 			font-weight: 600;
 			margin: 2.25rem;
 		}
+		@include desktop {
+			margin: 6.25rem;
+		}
 	}
 }
 .about {
@@ -122,6 +131,10 @@ p {
 		@include tablet {
 			margin: 3rem 2.25rem 2.25rem 3rem;
 			padding: 0rem;
+		}
+		@include desktop {
+			margin-left: auto;
+			width: 87%;
 		}
 		&--paragraph {
 			font-size: 1.5rem;
@@ -143,6 +156,10 @@ p {
 		padding: 0rem 1rem 1rem 1rem;
 		@include tablet {
 			padding: 0rem 6.25rem 2.25rem 6.25rem;
+		}
+		@include desktop {
+			margin: auto;
+			width: 70%;
 		}
 	}
 	&__image {
@@ -189,6 +206,11 @@ p {
 		@include tablet {
 			padding: 3rem 2.25rem 1rem 3rem;
 		}
+		@include desktop {
+			width: 85%;
+			margin: auto;
+			padding-left: 2rem;
+		}
 	}
 	&__image {
 		width: 100%;
@@ -205,6 +227,12 @@ p {
 			flex-wrap: wrap;
 			justify-content: space-between;
 			padding: 0rem 3rem 1.425em 3rem;
+		}
+		@include desktop {
+			width: 85%;
+			margin: auto;
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 }
@@ -225,6 +253,10 @@ p {
 			justify-content: space-between;
 			align-items: center;
 			padding-top: 2rem;
+		}
+		@include desktop {
+			margin: auto;
+			width: 91%;
 		}
 		&--title {
 			@include title;
@@ -274,6 +306,13 @@ p {
 			justify-content: space-between;
 			flex-direction: row;
 		}
+		@include desktop {
+			margin: auto;
+			width: 88%;
+			justify-content: flex-start;
+			padding-right: 2rem;
+			padding-bottom: 0;
+		}
 	}
 	&__contact-item {
 		padding: 0rem 0rem 3rem 0rem;
@@ -301,6 +340,10 @@ p {
 		flex-direction: column;
 		justify-content: flex-start;
 		padding: 0rem 0rem 2rem 0rem;
+		@include desktop {
+			margin: auto;
+			width: 91%;
+		}
 		&--logo {
 			@include logo;
 			@include tablet {
