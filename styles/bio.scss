@@ -1,4 +1,4 @@
-@use "../styles/partials/variables" as *;
+@use "../styles/partials/variables.scss" as *;
 @use "../styles/partials/typography" as *;
 @use "../styles/partials/mixins" as *;
 
@@ -11,15 +11,8 @@ html {
 body {
 	width: 100%;
 	margin: auto;
-	font-family: Avenir Next;
-	padding: 0rem;
-	margin: 0rem;
-	box-sizing: border-box;
-	font-size: 100%;
+	font-family: "Avenir Next";
 }
-// ul {
-// 	list-style-type: none;
-// }
 a {
 	list-style-type: none;
 	text-decoration: none;
@@ -49,13 +42,13 @@ p {
 	&__item {
 		width: 50%;
 		color: $primary-text-color-1;
-		// font-weight: bolder;
 		text-align: center;
 		&--active {
-			font-weight: bolder;
-			border-bottom: solid 2px;
+			border-bottom: solid 3px;
 			padding: 0rem 0rem 1rem 0rem;
-			color: $primary-text-color-1;
+		}
+		&--active-font {
+			font-weight: bolder;
 		}
 		&--non-active {
 			color: $primary-text-color-2;
