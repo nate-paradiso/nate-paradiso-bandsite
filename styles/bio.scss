@@ -20,6 +20,7 @@ a {
 }
 p {
 	@include paragraph;
+	font-size: 1rem;
 }
 
 .header {
@@ -115,7 +116,7 @@ p {
 	background-color: $primary-background-color-1;
 	color: $primary-text-color-1;
 	&__social {
-		padding: 0rem 0rem 1.5rem 0rem;
+		padding: 0rem 0rem 1rem 0rem;
 		&--title {
 			@include title;
 		}
@@ -126,8 +127,10 @@ p {
 			flex-wrap: wrap;
 		}
 		&--icon {
-			height: 2rem;
 			margin: 1rem 3.5rem 0rem 0rem;
+		}
+		&--image-size {
+			height: 2rem;
 		}
 		&--logo {
 			display: none;
@@ -135,7 +138,7 @@ p {
 		}
 	}
 	&__contact {
-		padding: 1rem 0rem 1rem 0rem;
+		padding: 1rem 0rem 3rem 0rem;
 	}
 	&__contact-item {
 		padding: 0rem 0rem 3rem 0rem;
@@ -146,11 +149,9 @@ p {
 		}
 		&--paragraph-top {
 			padding: 1rem 0rem 0rem 0rem;
-			margin: 0rem 0rem 0rem 0rem;
 		}
 		&--paragraph-bottom {
 			padding: 0rem 0rem 1rem 0rem;
-			margin: 0rem 0rem 0rem 0rem;
 		}
 	}
 	&__copy {
