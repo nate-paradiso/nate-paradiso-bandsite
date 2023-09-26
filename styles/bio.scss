@@ -12,13 +12,18 @@ body {
 	width: 100%;
 	margin: auto;
 	font-family: Avenir Next;
-	padding: 0;
-	margin: 0;
+	padding: 0rem;
+	margin: 0rem;
 	box-sizing: border-box;
 	font-size: 100%;
 }
-ul {
+// ul {
+// 	list-style-type: none;
+// }
+a {
 	list-style-type: none;
+	text-decoration: none;
+	color: $primary-text-color-1;
 }
 p {
 	@include paragraph;
@@ -31,27 +36,30 @@ p {
 	align-items: center;
 	background-color: $primary-background-color-1;
 	width: auto;
-	padding: 0rem 1rem 0rem 1rem;
 	&__logo {
 		@include logo;
-		padding: 2rem;
+		padding: 2rem 0rem 0rem 0rem;
+	}
+	&__nav {
+		display: flex;
+		padding: 1rem 0rem 0rem 0rem;
+		width: 100%;
+		flex-direction: row;
 	}
 	&__item {
-		display: flex;
-		width: 100%;
-		justify-content: center;
+		width: 50%;
 		color: $primary-text-color-1;
-	}
-	&__list {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		padding-left: 0;
-		width: auto;
-
-		&--nav-link {
+		// font-weight: bolder;
+		text-align: center;
+		&--active {
+			font-weight: bolder;
+			border-bottom: solid 2px;
+			padding: 0rem 0rem 1rem 0rem;
 			color: $primary-text-color-1;
-			padding: 0rem 3rem 2rem 3rem;
+		}
+		&--non-active {
+			color: $primary-text-color-2;
+			padding: 0rem 0rem 1rem 0rem;
 		}
 	}
 }
@@ -60,17 +68,19 @@ p {
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 0rem 1rem 0rem 1rem;
-	height: 26.5rem;
+	height: 20rem;
+	width: 100%;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	&__title {
 		color: $primary-text-color-1;
 		@include title;
+		padding-left: 1rem;
 	}
 }
 .about {
-	padding: 0rem 1rem 2rem 1rem;
+	padding: 0rem 1rem 1rem 1rem;
 	&__title {
 		@include title;
 		&--paragraph {
@@ -91,6 +101,7 @@ p {
 		font-size: 1.25rem;
 		font-weight: 400;
 		line-height: 1.5;
+		padding: 0rem 0rem 1rem 0rem;
 	}
 }
 .photo-gallery {
