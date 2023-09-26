@@ -30,23 +30,51 @@ p {
 	align-items: center;
 	background-color: $primary-background-color-1;
 	width: auto;
+	&__nav-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			justify-content: flex-start;
+			margin-left: 5.75rem;
+		}
+	}
 	&__logo {
 		@include logo;
 		padding: 2rem 0rem 0rem 0rem;
+		@include tablet {
+			margin-bottom: 2rem;
+		}
 	}
 	&__nav {
 		display: flex;
 		padding: 1rem 0rem 0rem 0rem;
 		width: 100%;
 		flex-direction: row;
+		@include tablet {
+			justify-content: flex-start;
+			width: 50%;
+			// margin: 0rem 1rem 0rem 1rem;
+		}
 	}
 	&__item {
 		width: 50%;
 		color: $primary-text-color-1;
 		text-align: center;
+		@include tablet {
+			margin: 0rem 3rem 0rem 3rem;
+		}
 		&--active {
 			border-bottom: solid 3px;
 			padding: 0rem 0rem 1rem 0rem;
+			@include tablet {
+				padding: 1rem 0rem 0rem 0rem;
+			}
 		}
 		&--active-font {
 			font-weight: bolder;
@@ -54,6 +82,12 @@ p {
 		&--non-active {
 			color: $primary-text-color-2;
 			padding: 0rem 0rem 1rem 0rem;
+			@include tablet {
+				padding: 1rem 0rem 3rem 0rem;
+			}
+		}
+		@include tablet {
+			width: auto;
 		}
 	}
 }
@@ -67,24 +101,52 @@ p {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	@include tablet {
+		height: 30rem;
+	}
 	// @include heroOverlay;
 	&__title {
 		color: $primary-text-color-1;
 		@include title;
 		padding-left: 1rem;
+		@include tablet {
+			font-size: 3.75rem;
+			font-weight: 600;
+			margin: 2.25rem;
+		}
 	}
 	// &__title-container::before {
 	// 	@include heroOverlay;
 	// }
 }
 .about {
-	padding: 0rem 1rem 1rem 1rem;
 	&__title {
+		padding: 0rem 1rem 1rem 1rem;
 		@include title;
+		@include tablet {
+			margin: 3rem 2.25rem 2.25rem 3rem;
+			padding: 0rem;
+		}
 		&--paragraph {
 			font-size: 1.5rem;
 			font-weight: bold;
 			margin: 2.5rem 0 1rem 0;
+			@include tablet {
+				font-weight: 900;
+			}
+		}
+	}
+	&__paragraph-container {
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	&__container {
+		padding: 0rem 1rem 1rem 1rem;
+		@include tablet {
+			padding: 0rem 6.25rem 2.25rem 6.25rem;
 		}
 	}
 	&__image {
@@ -94,23 +156,61 @@ p {
 		font-size: 1.5rem;
 		font-weight: bold;
 		line-height: 2.5rem;
+		padding-top: 1rem;
+		&--author {
+			@include tablet {
+				font-size: 1rem;
+				font-weight: 600;
+			}
+		}
+		@include tablet {
+			font-weight: 600;
+		}
 	}
 	&__paragraph {
 		font-size: 1.25rem;
 		font-weight: 400;
 		line-height: 1.5;
 		padding: 0rem 0rem 1rem 0rem;
+		@include tablet {
+			font-size: 1rem;
+		}
+		&--left {
+			@include tablet {
+				padding-right: 1rem;
+			}
+		}
 	}
 }
 .photo-gallery {
 	background-color: $alternative-background-color-1;
 	padding: 1.5rem 1rem 0rem 1rem;
+	@include tablet {
+		padding: 0rem;
+	}
 	&__title {
 		@include title;
+		@include tablet {
+			padding: 3rem 2.25rem 1rem 3rem;
+			// padding: 0rem;
+		}
 	}
 	&__image {
 		width: 100%;
 		padding: 0rem 0rem 1rem 0rem;
+		@include tablet {
+			width: 31%;
+			padding-bottom: 1.75rem;
+		}
+	}
+	&__container {
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 0rem 3rem 1.425em 3rem;
+		}
 	}
 }
 .footer {
@@ -119,8 +219,18 @@ p {
 	padding: 1.5rem 1rem 0rem 1rem;
 	background-color: $primary-background-color-1;
 	color: $primary-text-color-1;
+	@include tablet {
+		padding: 0rem 3rem 0rem 3rem;
+	}
 	&__social {
 		padding: 0rem 0rem 1rem 0rem;
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: 2rem;
+		}
 		&--title {
 			@include title;
 		}
@@ -129,6 +239,9 @@ p {
 			flex-direction: row;
 			justify-content: start;
 			flex-wrap: wrap;
+			// 	@include tablet {
+			// 	// 	align-self: flex-start;
+			// 	// }
 		}
 		&--icon {
 			margin: 1rem 3.5rem 0rem 0rem;
@@ -139,6 +252,9 @@ p {
 		&--logo {
 			display: none;
 			@include logo;
+			@include tablet {
+				display: block;
+			}
 		}
 	}
 	&__contact {
