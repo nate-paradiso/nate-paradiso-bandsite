@@ -64,6 +64,9 @@ p {
 			justify-content: flex-start;
 			width: 50%;
 		}
+		@include desktop {
+			width: 25%;
+		}
 	}
 	&__item {
 		width: 50%;
@@ -71,6 +74,10 @@ p {
 		text-align: center;
 		@include tablet {
 			margin: 0rem 3rem 0rem 3rem;
+		}
+		@include desktop {
+			margin-left: auto;
+			margin-right: auto;
 		}
 		&--active {
 			border-bottom: solid 3px;
@@ -84,9 +91,11 @@ p {
 		}
 		&--non-active {
 			color: $primary-text-color-2;
-			padding: 0rem 0rem 1rem 0rem;
+			&:hover {
+				color: #e1e1e1;
+			}
 			@include tablet {
-				padding: 1.25rem 0rem 3rem 0rem;
+				margin: 1.25rem 0rem 3rem 0rem;
 			}
 		}
 		@include tablet {
@@ -215,6 +224,10 @@ p {
 	&__image {
 		width: 100%;
 		padding: 0rem 0rem 1rem 0rem;
+		&::before {
+			content: "";
+			filter: grayscale(100);
+		}
 		@include tablet {
 			width: 31%;
 			padding-bottom: 1.75rem;
@@ -305,6 +318,8 @@ p {
 			display: flex;
 			justify-content: space-between;
 			flex-direction: row;
+			justify-content: flex-start;
+			padding-right: 2rem;
 		}
 		@include desktop {
 			margin: auto;
