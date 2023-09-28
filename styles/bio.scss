@@ -223,10 +223,6 @@ p {
 	&__image {
 		width: 100%;
 		padding: 0rem 0rem 1rem 0rem;
-		&::before {
-			content: "";
-			filter: grayscale(100);
-		}
 		@include tablet {
 			width: 31%;
 			padding-bottom: 1.75rem;
