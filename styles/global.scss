@@ -75,10 +75,6 @@ p {
 		@include tablet {
 			margin: 0rem 3rem 0rem 3rem;
 		}
-		// @include desktop {
-		// margin-left: auto;
-		// margin-right: auto;
-		// }
 		&--active {
 			border-bottom: solid 3px;
 			padding: 0rem 0rem 1rem 0rem;
@@ -98,8 +94,10 @@ p {
 				margin: 1.25rem 0rem 3rem 0rem;
 			}
 		}
-		&--show-space {
-			margin-left: 2.75rem;
+		@include tablet {
+			&--show-space {
+				margin-left: 2.75rem;
+			}
 		}
 		@include tablet {
 			width: auto;
