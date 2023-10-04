@@ -41,3 +41,44 @@
 		padding: 1rem;
 	}
 }
+.shows-title {
+	margin-left: 1rem;
+	margin-top: 2rem;
+	font-weight: 600;
+}
+.shows {
+	display: flex;
+	flex-direction: column;
+}
+.shows__card {
+	padding: 1rem 1rem 1rem 1rem;
+	border-bottom: solid 2px $outline-color;
+	&:hover {
+		background-color: $alternative-background-color-1;
+	}
+	&--label {
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		color: $primary-text-color-2;
+		font-weight: 600;
+	}
+	&--date {
+		font-weight: 600;
+		padding-bottom: 0.5rem;
+	}
+	&--text {
+		padding-bottom: 0.5rem;
+	}
+	&--buy-button {
+		width: 100%;
+		background-color: $primary-background-color-1;
+		text-transform: uppercase;
+		border-radius: 4px;
+		height: 40px;
+		color: $primary-text-color-1;
+		font-size: 0.75rem;
+	}
+	&--selected {
+		background-color: $outline-color;
+	}
+}

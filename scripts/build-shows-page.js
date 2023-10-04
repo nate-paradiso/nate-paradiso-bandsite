@@ -1,4 +1,4 @@
-const shows = [
+const showsArray = [
     {
         dateLabel: "Date",
         date: "Mon Sept 06 2021",
@@ -35,54 +35,72 @@ const shows = [
         location: "San Francisco, CA",
         button: "Buy Tickets" 
     },
+    {
+        dateLabel: "Date",
+        date: "Fri Nov 26 2021",
+        venueLabel: "Venue",
+        venue: "Moscow Center",
+        locationLabel: "Location",
+        location: "San Francisco, CA",
+        button: "Buy Tickets" 
+    },
+    {
+        dateLabel: "Date",
+        date: "Wed Dec 15 2021 ",
+        venueLabel: "Venue",
+        venue: "Press Club",
+        locationLabel: "Location",
+        location: "San Francisco, CA",
+        button: "Buy Tickets" 
+    },
   ]
 function addShows(event){
     
-    const showsContainer = document.querySelector(".shows__container");
-    for(let i = 0; i < shows.length; i++){
+    const shows = document.querySelector(".shows");
+    for(let i = 0; i < showsArray.length; i++){
         const showsCard = document.createElement("div");
         const showsDateLabel = document.createElement("p");
         const showsDate = document.createElement("p");
-        
         const showsVenueLabel = document.createElement("p");
         const showsVenue = document.createElement("p");
-        
         const showsLocationLabel = document.createElement("p");
         const showsLocation = document.createElement("p");
-        
         const buyNowButton = document.createElement("button");
-
-        showsCard.classList.add("shows__container");
-        showsDateLabel.classList.add("shows__label");
-        showsVenueLabel.classList.add("shows__label");
-        showsLocationLabel.classList.add("shows__label");
-        showsDate.classList.add("shows__date");
-        showsVenue.classList.add("shows__text");
-        showsLocation.classList.add("shows__text");
-        buyNowButton.classList.add("shows__buy-button");
-
-        
-        showsDateLabel.innerText = shows[i].dateLabel;
-        showsDate.innerText = shows[i].date;
-        showsVenueLabel.innerText = shows[i].venueLabel;
-        showsVenue.innerText = shows[i].venue;
-        showsLocationLabel.innerText = shows[i].locationLabel;
-        showsLocation.innerText = shows[i].location;
-        buyNowButton.innerText = shows[i].button;
-
-
-        showsCard.appendChild(showsDate);
+        showsCard.classList.add("shows__card");
+        // showsCard.classList.add("shows__card--selected");
+        showsDateLabel.classList.add("shows__card--label");
+        showsVenueLabel.classList.add("shows__card--label");
+        showsLocationLabel.classList.add("shows__card--label");
+        showsDate.classList.add("shows__card--date");
+        showsVenue.classList.add("shows__card--text");
+        showsLocation.classList.add("shows__card--text");
+        buyNowButton.classList.add("shows__card--buy-button");
+        showsDateLabel.innerText = showsArray[i].dateLabel;
+        showsDate.innerText = showsArray[i].date;
+        showsVenueLabel.innerText = showsArray[i].venueLabel;
+        showsVenue.innerText = showsArray[i].venue;
+        showsLocationLabel.innerText = showsArray[i].locationLabel;
+        showsLocation.innerText = showsArray[i].location;
+        buyNowButton.innerText = showsArray[i].button;
         showsCard.appendChild(showsDateLabel);
+        showsCard.appendChild(showsDate);
         showsCard.appendChild(showsVenueLabel);
         showsCard.appendChild(showsVenue);
         showsCard.appendChild(showsLocationLabel);
         showsCard.appendChild(showsLocation);
         showsCard.appendChild(buyNowButton);
-        showsContainer.appendChild(showsCard);
-
-
-        
+        shows.appendChild(showsCard);
     }
     
 }
 addShows()
+
+const showItems = document.querySelectorAll(".shows__card");
+
+function clickOnRow(event) {
+    showItems.forEach(row => showItems.classList.add("shows__card--selected"));
+    showItems.eventTarget.classList.remove("shows__card--selected");
+}
+showItems.forEach(row => {
+    showItems.addEventListener("click", clickOnRow);
+});
