@@ -1,0 +1,43 @@
+@use "../styles/partials/variables.scss" as *;
+@use "../styles/partials/typography" as *;
+@use "./partials/mixins" as *;
+
+.hero-show {
+	background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+		url("../assets/images/hero-shows.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 24rem;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	@include tablet {
+		height: 30rem;
+	}
+	@include desktop {
+		height: 50vw;
+	}
+	&__album {
+		padding: 2rem 0rem 0rem 1rem;
+		color: $primary-text-color-1;
+		font-size: 1rem;
+	}
+	&__title {
+		color: $primary-text-color-1;
+		@include title;
+		padding-left: 1rem;
+		padding-right: 4rem;
+		@include tablet {
+			font-size: 3.75rem;
+			font-weight: 600;
+			margin: 2.25rem;
+		}
+		@include desktop {
+			margin: 6.25rem;
+		}
+	}
+	&__sound-cloud {
+		padding: 1rem;
+	}
+}
