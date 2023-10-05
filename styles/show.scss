@@ -52,10 +52,20 @@
 	margin-left: 1rem;
 	margin-top: 2rem;
 	font-weight: 600;
+	@include tablet {
+		margin-left: 3rem;
+	}
 }
 .shows {
 	display: flex;
 	flex-direction: column;
+	&__card-item {
+		@include tablet {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
 }
 .shows__card {
 	padding: 1rem 1rem 1rem 1rem;
@@ -68,10 +78,16 @@
 		font-size: 0.75rem;
 		color: $primary-text-color-2;
 		font-weight: 600;
+		@include tablet {
+			display: none;
+		}
 	}
 	&--date {
 		font-weight: 600;
 		padding-bottom: 0.5rem;
+		@include tablet {
+			font-weight: 400;
+		}
 	}
 	&--text {
 		padding-bottom: 0.5rem;
@@ -84,6 +100,9 @@
 		height: 40px;
 		color: $primary-text-color-1;
 		font-size: 0.75rem;
+		@include tablet {
+			width: 20%;
+		}
 	}
 	&--selected {
 		background-color: $outline-color;
@@ -91,5 +110,14 @@
 	@include tablet {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-between;
+		margin: 0rem 2rem 1rem 2rem;
+		align-items: end;
+	}
+	&--label-tablet {
+		@include tablet {
+			display: block;
+			margin-bottom: 1rem;
+		}
 	}
 }

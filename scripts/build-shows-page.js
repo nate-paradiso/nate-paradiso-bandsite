@@ -56,17 +56,24 @@ const showsArray = [
   ]
 function addShows(event){
     
+    
     const shows = document.querySelector(".shows");
     for(let i = 0; i < showsArray.length; i++){
         const showsCard = document.createElement("div");
+        const showsDateCont = document.createElement("div")
         const showsDateLabel = document.createElement("p");
         const showsDate = document.createElement("p");
+        const showsVenueCont = document.createElement("div")
         const showsVenueLabel = document.createElement("p");
         const showsVenue = document.createElement("p");
+        const showsLocationCont = document.createElement("div")
         const showsLocationLabel = document.createElement("p");
         const showsLocation = document.createElement("p");
         const buyNowButton = document.createElement("button");
         showsCard.classList.add("shows__card");
+        showsDateCont.classList.add("shows__card-item");
+        showsVenueCont.classList.add("shows__card-item");
+        showsLocationCont.classList.add("shows__card-item");
         showsDateLabel.classList.add("shows__card--label");
         showsVenueLabel.classList.add("shows__card--label");
         showsLocationLabel.classList.add("shows__card--label");
@@ -81,18 +88,32 @@ function addShows(event){
         showsLocationLabel.innerText = showsArray[i].locationLabel;
         showsLocation.innerText = showsArray[i].location;
         buyNowButton.innerText = showsArray[i].button;
-        showsCard.appendChild(showsDateLabel);
-        showsCard.appendChild(showsDate);
-        showsCard.appendChild(showsVenueLabel);
-        showsCard.appendChild(showsVenue);
-        showsCard.appendChild(showsLocationLabel);
-        showsCard.appendChild(showsLocation);
+        showsDateCont.appendChild(showsDateLabel);
+        showsDateCont.appendChild(showsDate);
+        showsVenueCont.appendChild(showsVenueLabel);
+        showsVenueCont.appendChild(showsVenue);
+        showsLocationCont.appendChild(showsLocationLabel);
+        showsLocationCont.appendChild(showsLocation);
+        showsCard.appendChild(showsDateCont);
+        showsCard.appendChild(showsVenueCont);
+        showsCard.appendChild(showsLocationCont);
         showsCard.appendChild(buyNowButton);
         shows.appendChild(showsCard);
-    }
-    
+
+    }    
 }
 addShows()
+
+function addTabletLabel(event){
+       
+    const tabletLabels = document.querySelectorAll(".shows__card--label");
+    for(let i = 0; i < 3; i++){
+        tabletLabels[i].classList.add("shows__card--label-tablet");
+        tabletLabels[i].classList.add("shows__card--label-tablet");
+        tabletLabels[i].classList.add("shows__card--label-tablet");
+    }
+}
+addTabletLabel()
 
 const showItems = document.querySelectorAll(".shows__card");
 
