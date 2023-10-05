@@ -109,6 +109,7 @@ function addTabletLabel(event){
     }
 }
 addTabletLabel()
+
 const showItems = document.querySelectorAll(".shows__card");
 function clickOnRow(event) {
     for (let i = 0; i < showItems.length; i++) {
