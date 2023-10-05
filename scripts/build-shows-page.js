@@ -67,7 +67,6 @@ function addShows(event){
         const showsLocation = document.createElement("p");
         const buyNowButton = document.createElement("button");
         showsCard.classList.add("shows__card");
-        // showsCard.classList.add("shows__card--selected");
         showsDateLabel.classList.add("shows__card--label");
         showsVenueLabel.classList.add("shows__card--label");
         showsLocationLabel.classList.add("shows__card--label");
@@ -98,9 +97,20 @@ addShows()
 const showItems = document.querySelectorAll(".shows__card");
 
 function clickOnRow(event) {
-    showItems.forEach(row => showItems.classList.add("shows__card--selected"));
-    showItems.eventTarget.classList.remove("shows__card--selected");
+    for (let i = 0; i < showItems.length; i++) {
+        showItems[i].classList.remove("shows__card--selected");
+        // showItems[i].classList.remove("shows__card:hover");
+    }
+
+ 
+
+    event.currentTarget.classList.add("shows__card--selected");
+    
 }
-showItems.forEach(row => {
-    showItems.addEventListener("click", clickOnRow);
-});
+
+for (let i = 0; i < showItems.length; i++) {
+    showItems[i].addEventListener("click", clickOnRow);
+    
+}
+
+

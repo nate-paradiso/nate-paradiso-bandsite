@@ -22,6 +22,9 @@
 		padding: 2rem 0rem 0rem 1rem;
 		color: $primary-text-color-1;
 		font-size: 1rem;
+		@include tablet {
+			padding-left: 3rem;
+		}
 	}
 	&__title {
 		color: $primary-text-color-1;
@@ -31,7 +34,8 @@
 		@include tablet {
 			font-size: 3.75rem;
 			font-weight: 600;
-			margin: 2.25rem;
+			margin: 1rem 4rem 1rem 3rem;
+			padding-left: 0rem;
 		}
 		@include desktop {
 			margin: 6.25rem;
@@ -39,6 +43,9 @@
 	}
 	&__sound-cloud {
 		padding: 1rem;
+		@include tablet {
+			padding: 1rem 20rem 1rem 3rem;
+		}
 	}
 }
 .shows-title {
@@ -54,7 +61,7 @@
 	padding: 1rem 1rem 1rem 1rem;
 	border-bottom: solid 2px $outline-color;
 	&:hover {
-		background-color: $alternative-background-color-1;
+		background-color: $outline-color;
 	}
 	&--label {
 		text-transform: uppercase;
@@ -80,5 +87,9 @@
 	}
 	&--selected {
 		background-color: $outline-color;
+	}
+	@include tablet {
+		display: flex;
+		flex-direction: row;
 	}
 }
