@@ -25,6 +25,9 @@
 		@include tablet {
 			padding-left: 3rem;
 		}
+		@include desktop {
+			margin: 12rem 0rem 0rem 4rem;
+		}
 	}
 	&__title {
 		color: $primary-text-color-1;
@@ -38,7 +41,7 @@
 			padding-left: 0rem;
 		}
 		@include desktop {
-			margin: 6.25rem;
+			margin: 0rem 0rem 0rem 7rem;
 		}
 	}
 	&__sound-cloud {
@@ -46,6 +49,34 @@
 		@include tablet {
 			padding: 1rem 20rem 1rem 3rem;
 		}
+		@include desktop {
+			display: none;
+		}
+	}
+	&__sound-cloud-container {
+		@include desktop {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+	&__sound-cloud-desktop {
+		display: none;
+		@include tablet {
+			display: none;
+		}
+		@include desktop {
+			display: block;
+			margin-right: 7rem;
+			width: 50%;
+			padding-top: 1rem;
+		}
+	}
+}
+.main-show {
+	@include desktop {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
 	}
 }
 .shows-title {
@@ -54,6 +85,10 @@
 	font-weight: 600;
 	@include tablet {
 		margin-left: 3rem;
+	}
+	@include desktop {
+		margin-left: 7rem;
+		margin-right: 12rem;
 	}
 }
 .shows {
@@ -65,8 +100,16 @@
 			flex-direction: column;
 			justify-content: space-between;
 		}
+		@include desktop {
+			margin-right: 5rem;
+		}
+	}
+	@include desktop {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
 	}
 }
+
 .shows__card {
 	padding: 1rem 1rem 1rem 1rem;
 	border-bottom: solid 2px $outline-color;
@@ -103,6 +146,9 @@
 		@include tablet {
 			width: 20%;
 		}
+		@include desktop {
+			width: 17%;
+		}
 	}
 	&--selected {
 		background-color: $outline-color;
@@ -119,5 +165,11 @@
 			display: block;
 			margin-bottom: 1rem;
 		}
+		@include desktop {
+			margin-bottom: 2rem;
+		}
+	}
+	@include desktop {
+		width: 95%;
 	}
 }

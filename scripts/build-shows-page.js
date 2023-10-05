@@ -55,8 +55,6 @@ const showsArray = [
     },
   ]
 function addShows(event){
-    
-    
     const shows = document.querySelector(".shows");
     for(let i = 0; i < showsArray.length; i++){
         const showsCard = document.createElement("div");
@@ -99,13 +97,10 @@ function addShows(event){
         showsCard.appendChild(showsLocationCont);
         showsCard.appendChild(buyNowButton);
         shows.appendChild(showsCard);
-
     }    
 }
 addShows()
-
 function addTabletLabel(event){
-       
     const tabletLabels = document.querySelectorAll(".shows__card--label");
     for(let i = 0; i < 3; i++){
         tabletLabels[i].classList.add("shows__card--label-tablet");
@@ -114,24 +109,16 @@ function addTabletLabel(event){
     }
 }
 addTabletLabel()
-
 const showItems = document.querySelectorAll(".shows__card");
-
 function clickOnRow(event) {
     for (let i = 0; i < showItems.length; i++) {
         showItems[i].classList.remove("shows__card--selected");
         // showItems[i].classList.remove("shows__card:hover");
     }
-
- 
-
     event.currentTarget.classList.add("shows__card--selected");
-    
 }
-
 for (let i = 0; i < showItems.length; i++) {
     showItems[i].addEventListener("click", clickOnRow);
-    
 }
 
 
