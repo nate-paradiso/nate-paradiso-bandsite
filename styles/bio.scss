@@ -220,15 +220,24 @@
 	flex-direction: row;
 	border-radius: 4px;
 	border-color: $primary-text-color-2;
+	justify-content: space-between;
 	&__avatar {
 		background-color: $outline-color;
 		height: 4rem;
 		width: 4rem;
 	}
+	&__all-text {
+		width: 81%;
+	}
 	&__text {
 		&--name {
 			display: flex;
 			flex-direction: row;
+		}
+		&--time {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
 		}
 	}
 }
