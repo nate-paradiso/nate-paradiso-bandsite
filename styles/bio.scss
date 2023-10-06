@@ -2,106 +2,6 @@
 @use "../styles/partials/typography" as *;
 @use "../styles/partials/mixins" as *;
 
-// html {
-// 	padding: 0;
-// 	margin: 0;
-// 	box-sizing: border-box;
-// 	font-size: 100%;
-// }
-// body {
-// 	width: 100%;
-// 	margin: auto;
-// 	font-family: "Avenir Next";
-// }
-// a {
-// 	list-style-type: none;
-// 	text-decoration: none;
-// 	color: $primary-text-color-1;
-// }
-// p {
-// 	@include paragraph;
-// 	font-size: 1rem;
-// }
-// .header {
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	align-items: center;
-// 	background-color: $primary-background-color-1;
-// 	width: auto;
-// 	&__nav-container {
-// 		display: flex;
-// 		flex-direction: column;
-// 		justify-content: center;
-// 		align-items: center;
-// 		width: 100%;
-// 		@include tablet {
-// 			display: flex;
-// 			flex-direction: row;
-// 			width: 100%;
-// 			justify-content: flex-start;
-// 		}
-// 		@include desktop {
-// 			margin: auto;
-// 			width: 90%;
-// 		}
-// 	}
-// 	&__logo {
-// 		@include logo;
-// 		padding: 2rem 0rem 0rem 0rem;
-// 		@include tablet {
-// 			margin-bottom: 2rem;
-// 			padding-left: 3.25rem;
-// 		}
-// 	}
-// 	&__nav {
-// 		display: flex;
-// 		padding: 1rem 0rem 0rem 0rem;
-// 		width: 100%;
-// 		flex-direction: row;
-// 		@include tablet {
-// 			justify-content: flex-start;
-// 			width: 50%;
-// 		}
-// 		@include desktop {
-// 			width: 25%;
-// 		}
-// 	}
-// 	&__item {
-// 		width: 50%;
-// 		color: $primary-text-color-1;
-// 		text-align: center;
-// 		@include tablet {
-// 			margin: 0rem 3rem 0rem 3rem;
-// 		}
-// 		@include desktop {
-// 			margin-left: auto;
-// 			margin-right: auto;
-// 		}
-// 		&--active {
-// 			border-bottom: solid 3px;
-// 			padding: 0rem 0rem 1rem 0rem;
-// 			@include tablet {
-// 				padding: 1.25rem 0rem 0rem 0rem;
-// 			}
-// 		}
-// 		&--active-font {
-// 			font-weight: 600;
-// 		}
-// 		&--non-active {
-// 			color: $primary-text-color-2;
-// 			&:hover {
-// 				color: #e1e1e1;
-// 			}
-// 			@include tablet {
-// 				margin: 1.25rem 0rem 3rem 0rem;
-// 			}
-// 		}
-// 		@include tablet {
-// 			width: auto;
-// 		}
-// 	}
-// }
 .hero {
 	background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
 		url("../assets/images/hero-bio.jpg");
@@ -264,6 +164,43 @@
 		flex-direction: column;
 		width: 100%;
 		padding: 0rem 1rem 1rem 0rem;
+		&--name {
+			border-radius: 4px;
+			border-color: $primary-text-color-2;
+			height: 2rem;
+		}
+		&--name-label {
+			padding-bottom: 1rem;
+		}
+		&--name::placeholder {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			color: black;
+		}
+		&--comments {
+			background-color: $alternative-background-color-1;
+			border-radius: 4px;
+			border-color: $primary-text-color-2;
+			height: 6rem;
+		}
+		&--comments::placeholder {
+			margin-bottom: 5rem;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			color: black;
+			justify-self: start;
+		}
+		&--comments-label {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			align-self: flex-start;
+		}
+		&--button {
+			margin-top: 1rem;
+			height: 2rem;
+			text-transform: uppercase;
+			background-color: $primary-background-color-1;
+			border-radius: 4px;
+			color: $primary-text-color-1;
+		}
 	}
 }
 .form-image-cr {
@@ -277,124 +214,15 @@
 		height: 100%;
 	}
 }
-// .footer {
-// 	display: flex;
-// 	flex-direction: column;
-// 	padding: 1.5rem 1rem 0rem 1rem;
-// 	background-color: $primary-background-color-1;
-// 	color: $primary-text-color-1;
-// 	@include tablet {
-// 		padding: 0rem 3rem 0rem 3rem;
-// 	}
-// 	&__social {
-// 		padding: 0rem 0rem 1rem 0rem;
-// 		@include tablet {
-// 			display: flex;
-// 			flex-direction: row;
-// 			justify-content: space-between;
-// 			align-items: center;
-// 			padding-top: 2rem;
-// 		}
-// 		@include desktop {
-// 			margin: auto;
-// 			width: 91%;
-// 		}
-// 		&--title {
-// 			@include title;
-// 			@include tablet {
-// 				padding-right: 2rem;
-// 			}
-// 		}
-// 		&--images {
-// 			display: flex;
-// 			flex-direction: row;
-// 			justify-content: start;
-// 			flex-wrap: wrap;
-// 			@include tablet {
-// 				padding-right: 0rem;
-// 			}
-// 		}
-// 		&--icon {
-// 			margin: 1rem 3.5rem 0rem 0rem;
-// 			@include tablet {
-// 				margin: 1rem 2rem 0rem 0rem;
-// 			}
-// 		}
-// 		&--image-size {
-// 			height: 2rem;
-// 		}
-// 		&--logo {
-// 			display: none;
-// 			@include logo;
-// 			@include tablet {
-// 				display: block;
-// 			}
-// 		}
-// 	}
-// 	&__social-container {
-// 		@include tablet {
-// 			display: flex;
-// 			flex-direction: row;
-// 			justify-content: flex-start;
-// 			align-items: center;
-// 			flex-wrap: nowrap;
-// 		}
-// 	}
-// 	&__contact {
-// 		padding: 1rem 0rem 3rem 0rem;
-// 		@include tablet {
-// 			display: flex;
-// 			justify-content: space-between;
-// 			flex-direction: row;
-// 			justify-content: flex-start;
-// 			padding-right: 2rem;
-// 		}
-// 		@include desktop {
-// 			margin: auto;
-// 			width: 88%;
-// 			justify-content: flex-start;
-// 			padding-right: 2rem;
-// 			padding-bottom: 0;
-// 		}
-// 	}
-// 	&__contact-item {
-// 		padding: 0rem 0rem 3rem 0rem;
-// 		@include tablet {
-// 			padding-right: 2rem;
-// 		}
-// 		&--title {
-// 			padding: 0rem;
-// 			margin: 0rem;
-// 			line-height: 1.5rem;
-// 			font-weight: 600;
-// 			@include tablet {
-// 				font-weight: 500;
-// 			}
-// 		}
-// 		&--paragraph-top {
-// 			padding: 1rem 0rem 0rem 0rem;
-// 		}
-// 		&--paragraph-bottom {
-// 			padding: 0rem 0rem 1rem 0rem;
-// 		}
-// 	}
-// 	&__copy {
-// 		display: flex;
-// 		flex-direction: column;
-// 		justify-content: flex-start;
-// 		padding: 0rem 0rem 2rem 0rem;
-// 		@include desktop {
-// 			margin: auto;
-// 			width: 91%;
-// 		}
-// 		&--logo {
-// 			@include logo;
-// 			@include tablet {
-// 				display: none;
-// 			}
-// 		}
-// 		&--logo-container {
-// 			padding: 0rem 0rem 1rem 0rem;
-// 		}
-// 	}
-// }
+
+.comments-container {
+	display: flex;
+	flex-direction: row;
+	border-radius: 4px;
+	border-color: $primary-text-color-2;
+	&__avatar {
+		background-color: $outline-color;
+		height: 4rem;
+		width: 4rem;
+	}
+}
