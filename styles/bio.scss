@@ -225,4 +225,10 @@
 		height: 4rem;
 		width: 4rem;
 	}
+	&__text {
+		&--name {
+			display: flex;
+			flex-direction: row;
+		}
+	}
 }
