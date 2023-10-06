@@ -168,6 +168,7 @@
 			border-radius: 4px;
 			border-color: $primary-text-color-2;
 			height: 2rem;
+			background-color: #fafafa;
 		}
 		&--name-label {
 			padding-bottom: 1rem;
@@ -219,8 +220,11 @@
 	display: flex;
 	flex-direction: row;
 	border-radius: 4px;
-	border-color: $primary-text-color-2;
+	border-color: #afafaf;
+	border-top: solid 2px #e1e1e1;
 	justify-content: space-between;
+	margin: 0rem 1rem 1rem 1rem;
+	padding-top: 1rem;
 	&__avatar {
 		background-color: $outline-color;
 		height: 4rem;
@@ -234,10 +238,18 @@
 			display: flex;
 			flex-direction: row;
 		}
+		&--name-label {
+			color: $primary-background-color-1;
+			font-weight: 600;
+		}
 		&--time {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+		}
+		&--time-label {
+			color: #afafaf;
+			font-weight: 400;
 		}
 	}
 }
