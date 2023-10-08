@@ -4,7 +4,7 @@ const formCommentArray = [
   {
     name: "Mile Acosta",
     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    timeStamp: "02/17/2021",
+    timeStamp: "12/20/2020",
   },
   {
     name: "Emilie Beach",
@@ -14,7 +14,7 @@ const formCommentArray = [
   {
     name: "Connor Walton",
     comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    timeStamp: "12/20/2020",
+    timeStamp: "02/17/2021",
   },
  
 ];
@@ -24,21 +24,33 @@ form.addEventListener("submit", function (event) {
     
     const name = document.getElementById("name").value;
     const comment = document.getElementById("comment").value;
+    const timeStamp = new Date();
 
     const formData = {
         name, 
         comment,
-      
+        timeStamp: timeStamp.toLocaleDateString(),
     };
 
     formCommentArray.push(formData);
 
     form.reset();
     addDataDisplay();
+
+    
 });
 
+function sortingArray() {
+formCommentArray.sort(function(a, b) {
+  let aDate = new Date(a.timeStamp);
+  let bDate = new Date(b.timeStamp);
+  return aDate - bDate;
+});
+};
+sortingArray();
+
 function loadComments() {
-  formCommentArray.forEach((formData) => {
+  formCommentArray.map((formData) => {
 
     const commentContainer = document.createElement("div");
     commentContainer.classList.add("comments-container");
@@ -64,10 +76,9 @@ function loadComments() {
     name.textContent = formData.name;
     commentTextTimeContainer.appendChild(name);
 
-    const timeStamp = new Date().toLocaleDateString();
     const timeStampTag = document.createElement("p");
     timeStampTag.classList.add("comments-container__text--time-label");
-    timeStampTag.textContent = timeStamp;
+    timeStampTag.textContent = formData.timeStamp;
     commentTextTimeContainer.appendChild(timeStampTag);
 
     const comment = document.createElement("p");
@@ -75,17 +86,21 @@ function loadComments() {
     comment.textContent = formData.comment;
     commentTextContainer.appendChild(comment);
 
-
-
-    formComments.appendChild(commentContainer)
+  
+    formComments.prepend(commentContainer);
+    
+    
+    
   });
 }
-loadComments()
+loadComments();
 
 function addDataDisplay() {
-    formComments.innerHTML = "";
-    formCommentArray.sort();
-    loadComments();
-  
 
+    formComments.innerHTML = "";
+
+    sortingArray();
+    loadComments();
+    
+    
 }
