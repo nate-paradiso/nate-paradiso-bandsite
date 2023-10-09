@@ -100,26 +100,39 @@ function addShows(event){
     }    
 }
 addShows()
+
+
 function addTabletLabel(event){
     const tabletLabels = document.querySelectorAll(".shows__card--label");
     for(let i = 0; i < 3; i++){
-        tabletLabels[i].classList.add("shows__card--label-tablet");
-        tabletLabels[i].classList.add("shows__card--label-tablet");
         tabletLabels[i].classList.add("shows__card--label-tablet");
     }
 }
 addTabletLabel()
 
+
 const showItems = document.querySelectorAll(".shows__card");
+
+function onHover(event) {
+    for (let i = 0; i < showItems.length; i++) {
+        showItems[i].classList.remove("shows__card-hover-on");
+    }
+    event.currentTarget.classList.add("shows__card-hover-on");
+}function offHover(event) {
+    event.currentTarget.classList.remove("shows__card-hover-on");
+}
+
+for (let i = 0; i < showItems.length; i++) {
+    showItems[i].addEventListener("mouseover", onHover);
+    showItems[i].addEventListener("mouseleave", offHover); 
+}
 function clickOnRow(event) {
     for (let i = 0; i < showItems.length; i++) {
         showItems[i].classList.remove("shows__card--selected");
-        // showItems[i].classList.remove("shows__card:hover");
+        showItems[i].classList.remove("shows__card-hover-on");
     }
     event.currentTarget.classList.add("shows__card--selected");
 }
 for (let i = 0; i < showItems.length; i++) {
     showItems[i].addEventListener("click", clickOnRow);
 }
-
-

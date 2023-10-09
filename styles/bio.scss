@@ -33,9 +33,11 @@
 	}
 }
 .about {
+	background-color: $primary-text-color-1;
 	&__title {
 		padding: 0rem 1rem 1rem 1rem;
 		@include title;
+		color: $primary-background-color-1;
 		@include tablet {
 			margin: 3rem 2.25rem 2.25rem 3rem;
 			padding: 0rem;
@@ -48,6 +50,7 @@
 			font-size: 1.5rem;
 			font-weight: 400;
 			margin: 2.5rem 0 1rem 0;
+			color: $primary-background-color-1;
 			@include tablet {
 				font-weight: 600;
 			}
@@ -78,6 +81,7 @@
 		font-weight: 600;
 		line-height: 2.5rem;
 		padding-top: 1rem;
+		color: $primary-background-color-1;
 		&--author {
 			@include tablet {
 				font-size: 1rem;
@@ -93,6 +97,7 @@
 		font-weight: 400;
 		line-height: 1.5;
 		padding: 0rem 0rem 1rem 0rem;
+		color: $primary-background-color-1;
 		@include tablet {
 			font-size: 1rem;
 		}
@@ -111,6 +116,7 @@
 	}
 	&__title {
 		@include title;
+		color: $primary-background-color-1;
 		@include tablet {
 			padding: 3rem 2.25rem 1rem 3rem;
 		}
@@ -154,6 +160,7 @@
 	padding-left: 1rem;
 	font-weight: 600;
 	font-size: 2rem;
+	color: $primary-background-color-1;
 	@include tablet {
 		padding: 0rem 2.25rem 1rem 3rem;
 		font-size: 2.5rem;
@@ -258,7 +265,7 @@
 }
 .shows__card--label {
 	@include tablet {
-		display: block;
+		// display: block;
 	}
 }
 .comments-container {
