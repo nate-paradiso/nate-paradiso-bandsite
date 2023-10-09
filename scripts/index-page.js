@@ -49,7 +49,7 @@ formCommentArray.sort(function(a, b) {
 };
 sortingArray();
 
-function loadComments() {
+function displayComment() {
   formCommentArray.map((formData) => {
 
     const commentContainer = document.createElement("div");
@@ -93,14 +93,14 @@ function loadComments() {
     
   });
 }
-loadComments();
+displayComment();
 
 function addDataDisplay() {
 
     formComments.innerHTML = "";
 
     sortingArray();
-    loadComments();
+    displayComment();
     
     
 }

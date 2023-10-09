@@ -54,6 +54,7 @@ const showsArray = [
         button: "Buy Tickets" 
     },
   ]
+
 function addShows(event){
     const shows = document.querySelector(".shows");
     for(let i = 0; i < showsArray.length; i++){
@@ -101,7 +102,7 @@ function addShows(event){
 }
 addShows()
 
-// removes class for date venue and location titles for table and desktop view
+// removes class for date venue and location titles for tablet and desktop view
 function addTabletLabel(event){
     const tabletLabels = document.querySelectorAll(".shows__card--label");
     for(let i = 0; i < 3; i++){
