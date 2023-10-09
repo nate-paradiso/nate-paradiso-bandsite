@@ -154,26 +154,41 @@
 	padding-left: 1rem;
 	font-weight: 600;
 	font-size: 2rem;
+	@include tablet {
+		padding: 0rem 2.25rem 1rem 3rem;
+		font-size: 2.5rem;
+	}
+	@include desktop {
+		padding-left: 6rem;
+		margin-bottom: 0rem;
+		padding-bottom: 0rem;
+	}
 }
 .form-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	@include tablet {
+		padding: 2rem 3rem 0rem 3rem;
+	}
+	@include desktop {
+		padding: 2rem 20rem 0rem 20rem;
+	}
 	&__typing {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		padding: 0rem 1rem 1rem 0rem;
+		padding: 0rem 1rem 1rem 3rem;
 		&--name {
 			border-radius: 4px;
-			border-color: $primary-text-color-2;
-			height: 2rem;
+			border-color: $outline-color;
+			height: 3rem;
 			background-color: #fafafa;
 			border-style: solid;
 			input::placeholder {
 				font-family: Verdana, Geneva, Tahoma, sans-serif;
-				color: black;
 				font-size: 3rem;
+				color: #323232;
 			}
 		}
 		&--name-label {
@@ -182,9 +197,11 @@
 		&--comments {
 			background-color: $alternative-background-color-1;
 			border-radius: 4px;
-			border-color: $primary-text-color-2;
+			border-color: $outline-color;
 			height: 6rem;
 			border-style: solid;
+			resize: none;
+			border-width: 2px;
 			input::placeholder {
 				margin-bottom: 5rem;
 				font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -196,6 +213,8 @@
 			padding-top: 1rem;
 			padding-bottom: 1rem;
 			align-self: flex-start;
+			@include tablet {
+			}
 		}
 		&--button {
 			margin-top: 1rem;
@@ -204,21 +223,44 @@
 			background-color: $primary-background-color-1;
 			border-radius: 4px;
 			color: $primary-text-color-1;
+			@include tablet {
+				margin-left: 26.375rem;
+			}
+			@include desktop {
+				margin-left: 23.375rem;
+			}
+		}
+	}
+	&__img-container {
+		width: 36px;
+		height: 36px;
+		@include tablet {
+			width: 48px;
+			height: 48px;
+		}
+		&--image {
+			background-image: url(../assets/images/Mohan-muruge.jpg);
+			background-size: 56px;
+			height: 36px;
+			width: 36px;
+			border-radius: 50%;
+			background-repeat: no-repeat;
+			margin: 1rem;
+			background-position-x: 25%;
+			background-position-y: 50%;
+			@include tablet {
+				width: 48px;
+				height: 48px;
+				background-size: 85px;
+			}
 		}
 	}
 }
-.form-image-cr {
-	background-image: url(../assets/images/Mohan-muruge.jpg);
-	background-size: 84px;
-	height: 48px;
-	width: 64px;
-	border-radius: 50%;
-	background-repeat: no-repeat;
-	margin: 1rem;
-	background-position-x: 25%;
-	background-position-y: 50%;
+.shows__card--label {
+	@include tablet {
+		display: block;
+	}
 }
-
 .comments-container {
 	display: flex;
 	flex-direction: row;
@@ -228,15 +270,28 @@
 	justify-content: space-between;
 	margin: 0rem 1rem 1rem 1rem;
 	padding-top: 1rem;
+	@include tablet {
+		margin: 2rem 4rem 2rem 4rem;
+	}
+	@include desktop {
+		margin: 2rem 21rem 2rem 21rem;
+	}
 	&__avatar {
 		background-color: $outline-color;
-		height: 3rem;
-		width: 3rem;
+		height: 36px;
+		width: 36px;
 		border-radius: 50%;
 		display: inline-block;
+		@include tablet {
+			height: 48px;
+			width: 48px;
+		}
 	}
 	&__all-text {
-		width: 81%;
+		width: 85%;
+		@include tablet {
+			width: 88%;
+		}
 	}
 	&__text {
 		&--name {

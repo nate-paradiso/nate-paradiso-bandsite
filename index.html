@@ -59,13 +59,14 @@
     <form class="form" id="myForm">
         <h2 class="form-title">Join the Conversation</h2>
         <div class="form-container">
-            <div class="form-image-cr">
+            <div class="form-container__img-container">
+                <div class="form-container__img-container--image"></div>
             </div>
             <div class="form-container__typing">
                 <label class="shows__card--label form-container__typing--name-label" for="name">Name</label>
                 <input class="form-container__typing--name" type="text" name="name" id="name" placeholder="Enter your name"/>
                 <label class="shows__card--label form-container__typing--comments-label" for="comment">Comment</label>
-                <input class="form-container__typing--comments" type="text" name="comment" id="comment" placeholder="Add a new comment" ></input>
+                <textarea class="form-container__typing--comments" name="comment" id="comment" cols="30" rows="10" placeholder="Add a new comment" ></textarea>
                 <input class="form-container__typing--button" type="submit" value="comment"/>
             </div>
         </div>    
