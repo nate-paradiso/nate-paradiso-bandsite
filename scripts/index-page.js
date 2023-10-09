@@ -18,7 +18,7 @@ const formCommentArray = [
   },
  
 ];
-
+// adds event submit button, pushing new data in the array
 form.addEventListener("submit", function (event) {
     event.preventDefault();
     
@@ -36,10 +36,9 @@ form.addEventListener("submit", function (event) {
 
     form.reset();
     addDataDisplay();
-
-    
 });
 
+// sorts array by date on default comments with newest on top
 function sortingArray() {
 formCommentArray.sort(function(a, b) {
   let aDate = new Date(a.timeStamp);
@@ -49,6 +48,7 @@ formCommentArray.sort(function(a, b) {
 };
 sortingArray();
 
+// builds new elements for display in new array
 function displayComment() {
   formCommentArray.map((formData) => {
 
@@ -86,21 +86,15 @@ function displayComment() {
     comment.textContent = formData.comment;
     commentTextContainer.appendChild(comment);
 
-  
     formComments.prepend(commentContainer);
-    
-    
-    
   });
 }
 displayComment();
 
+
+// runs sort function and add new comments function
 function addDataDisplay() {
-
     formComments.innerHTML = "";
-
     sortingArray();
     displayComment();
-    
-    
 }
