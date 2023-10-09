@@ -192,11 +192,6 @@
 			height: 3rem;
 			background-color: #fafafa;
 			border-style: solid;
-			input::placeholder {
-				font-family: Verdana, Geneva, Tahoma, sans-serif;
-				font-size: 3rem;
-				color: #323232;
-			}
 		}
 		&--name-label {
 			padding-bottom: 1rem;
@@ -230,11 +225,15 @@
 			background-color: $primary-background-color-1;
 			border-radius: 4px;
 			color: $primary-text-color-1;
+			width: 100%;
+			align-self: end;
 			@include tablet {
-				margin-left: 26.375rem;
+				width: 30%;
+				max-width: 9.375rem;
 			}
 			@include desktop {
-				margin-left: 23.375rem;
+				width: 30%;
+				max-width: 9.375rem;
 			}
 		}
 	}
@@ -265,9 +264,30 @@
 }
 .shows__card--label {
 	@include tablet {
-		// display: block;
 	}
 }
+input {
+	padding-left: 1rem;
+	font-family: Avenir;
+	font-size: 1rem;
+}
+input::placeholder {
+	font-family: Avenir;
+	font-size: 1rem;
+	color: $primary-background-color-1;
+}
+textarea {
+	font-family: Avenir;
+	font-size: 1rem;
+	padding-left: 1rem;
+	padding-top: 1rem;
+}
+textarea::placeholder {
+	font-family: Avenir;
+	font-size: 1rem;
+	color: $primary-background-color-1;
+}
+
 .comments-container {
 	display: flex;
 	flex-direction: row;

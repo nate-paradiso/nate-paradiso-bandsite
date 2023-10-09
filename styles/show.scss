@@ -99,14 +99,15 @@
 	display: flex;
 	flex-direction: column;
 	&__card-item {
-		width: 25%;
 		@include tablet {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
+			width: 25%;
 		}
 		@include desktop {
 			margin-right: 5rem;
+			width: 25%;
 		}
 	}
 	@include desktop {
@@ -118,6 +119,9 @@
 .shows__card {
 	padding: 1rem 1rem 1rem 1rem;
 	border-bottom: solid 2px $outline-color;
+	&:hover {
+		background-color: $alternative-background-color-1;
+	}
 	&--label {
 		text-transform: uppercase;
 		font-size: 0.75rem;

@@ -101,7 +101,7 @@ function addShows(event){
 }
 addShows()
 
-
+// removes class for date venue and location titles for table and desktop view
 function addTabletLabel(event){
     const tabletLabels = document.querySelectorAll(".shows__card--label");
     for(let i = 0; i < 3; i++){
@@ -110,26 +110,12 @@ function addTabletLabel(event){
 }
 addTabletLabel()
 
-
+// click effect on background color
 const showItems = document.querySelectorAll(".shows__card");
 
-function onHover(event) {
-    for (let i = 0; i < showItems.length; i++) {
-        showItems[i].classList.remove("shows__card-hover-on");
-    }
-    event.currentTarget.classList.add("shows__card-hover-on");
-}function offHover(event) {
-    event.currentTarget.classList.remove("shows__card-hover-on");
-}
-
-for (let i = 0; i < showItems.length; i++) {
-    showItems[i].addEventListener("mouseover", onHover);
-    showItems[i].addEventListener("mouseleave", offHover); 
-}
 function clickOnRow(event) {
     for (let i = 0; i < showItems.length; i++) {
         showItems[i].classList.remove("shows__card--selected");
-        showItems[i].classList.remove("shows__card-hover-on");
     }
     event.currentTarget.classList.add("shows__card--selected");
 }
