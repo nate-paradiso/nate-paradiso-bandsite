@@ -1,33 +1,51 @@
-const apiKey = "?api_key=64a4eaa5-fa50-4983-9f6e-be86df125399";
-const baseURL = "https://project-1-api.herokuapp.com";
+const nateAPIKey = "?api_key=64a4eaa5-fa50-4983-9f6e-be86df125399";
+import { displayComment } from "./index-page.js";
 
-
-// class BandSiteAPI {
-// constructor (apiKey) {
-//     this.apiKey = apiKey;
-    
-
-const getComments = async () => {
+export class BandSiteAPI {
+    constructor (apiKey) {
+        this.apiKey = apiKey;
+        this.baseURL = "https://project-1-api.herokuapp.com";
+    }
+getComments = async () => {
     try {
-        const commentData = await axios.get(`${baseURL}/comments${apiKey}`);
-        const commentDomDataArray = commentData.data.map(comment => {
-            return {
-                name: comment.name,
-                comment: comment.comment,
-                timestamp: comment.timestamp
-            };
-        });
-
-        // console.log(commentDomDataArray);
+        const commentData = await axios.get(`${this.baseURL}/comments${this.apiKey}`);
+        return commentData.data;
     }
     catch(error) {
-    console.log(error)
+        console.log(error)
     }
 }
+}
+// create this index and call displayComment or map.
+async function takeCommentData () {
+    try {
+        const comments = await nateBandSiteAPI.getComments()
+        // not working below.
+        const commentsData = comments.map(comment => ({
+            name: comment.name,
+            comment: comment.comment,
+            timeStamp: comment.timeStamp
+        
+        }));
+        console.log(commentsData);
+        displayComment(commentsData);
+    }
+    catch (error){
+        console.log(error)
+    }
+}
+const nateBandSiteAPI = new BandSiteAPI(nateAPIKey);
+takeCommentData()
+// console.log(nateBandSiteAPI.getComments());
 
-getComments();
-const commentDomDataArray = [];
-export default commentDomDataArray;
+
+
+
+
+
+
+
+
 
 // let formCommentArray = []
 // formCommentArray.forEach(comment => {
