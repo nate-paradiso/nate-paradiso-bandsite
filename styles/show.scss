@@ -127,9 +127,6 @@
 		font-size: 0.75rem;
 		color: $primary-text-color-2;
 		font-weight: 600;
-		@include tablet {
-			display: none;
-		}
 	}
 	&--label-display {
 		display: block;

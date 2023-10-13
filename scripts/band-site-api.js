@@ -8,49 +8,34 @@ export class BandSiteAPI {
     getComments = async () => {
         try {
             const commentData = await axios.get(`${this.baseURL}/comments${this.apiKey}`);
-            // console.log(commentData.data);
+            console.log(commentData.data);
             return commentData.data;
-        }catch(error) {
-            console.log(error);
+        }
+        catch(error) {
+            console.error(error);
         }
     }
     getShows = async () => {
-            try {
-                const showDates = await axios.get(`${baseURL}/showdates${apiKey}`);
-                console.log(showDates.data);
-            }
-            catch(error) {
-            console.log(error)
-            }
-        }        
+        try {
+            const showDates = await axios.get(`${this.baseURL}/showdates${this.apiKey}`);
+            console.log(showDates.data);
+            return showDates.data;
+        }
+        catch(error) {
+            console.error(error);
+        }
+    }      
+    postComment = async (formData) => {
+        try {
+            const postComment = await axios.post(`${this.baseURL}/comments${this.apiKey}`, formData);
+            console.log(postComment.data);
+            return postComment.data;
+        }
+        catch(error) {
+            console.error(error);
+        }
+    }
 }
-// export defaultBandSiteAPI;
-// const commentResponse = await getComments()
-
-
-// create this index and call displayComment or map.
-// async function takeCommentData () {
-//     try {
-//         const comments = await nateBandSiteAPI.getComments()
-//         // not working below.
-//         // const commentsData = comments.map(comment => ({
-//         //     name: comment.name,
-//         //     comment: comment.comment,
-//         //     timestamp: comment.timeStamp
-//         }
-//         // console.log(commentsData);
-//         // displayComment();
-//     }
-//     catch(error){
-//         console.log(error)
-//     }
-
-
-
-
-// const nateBandSiteAPIInstance = new BandSiteAPI(nateAPIKey);
-// takeCommentData()
-// console.log(nateBandSiteAPI.getComments());
 
 
 
@@ -61,14 +46,10 @@ export class BandSiteAPI {
 
 
 
-// let formCommentArray = []
-//// formCommentArray.forEach(comment => {
-//     document.textContent(commentData.data[0].name);
-//     document.textContent(commentData.data[0].comment);
-//     document.textContent(commentData.data[0].timestamp);
 
-// });
-// }
+
+
+
 
 
 
