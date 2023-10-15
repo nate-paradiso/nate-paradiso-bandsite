@@ -8,7 +8,7 @@ export class BandSiteAPI {
     getComments = async () => {
         try {
             const commentData = await axios.get(`${this.baseURL}/comments${this.apiKey}`);
-            console.log(commentData.data);
+            // console.log(commentData.data);
             return commentData.data;
         }
         catch(error) {
@@ -18,7 +18,7 @@ export class BandSiteAPI {
     getShows = async () => {
         try {
             const showDates = await axios.get(`${this.baseURL}/showdates${this.apiKey}`);
-            console.log(showDates.data);
+            // console.log(showDates.data);
             return showDates.data;
         }
         catch(error) {
@@ -28,7 +28,7 @@ export class BandSiteAPI {
     postComment = async (formData) => {
         try {
             const postComment = await axios.post(`${this.baseURL}/comments${this.apiKey}`, formData);
-            console.log(postComment.data);
+            // console.log(postComment.data);
             return postComment.data;
         }
         catch(error) {

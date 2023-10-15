@@ -17,9 +17,9 @@ function formatTime (timestamp) {
 async function waitForComments () {
   try {
     const commentAPIArray = await nateBandSiteAPI.getComments();
-    // formCommentArray = commentAPIArray.map(commentTime => ({...commentTime, date: formatTime(commentTime.date),}));
 
     formCommentArray = commentAPIArray;
+    sortingArray();
     displayComment();
 
   }catch(error) {
@@ -36,7 +36,7 @@ const formComments = document.getElementById("formComments");
 // adds event submit button, pushing new data in the array
 form.addEventListener("submit", async function (event) {
    
-      // refreshes the page use with a submit event -  maybe best to use with all events 
+      // refreshes the page, use with a submit event -  maybe best to use with all events 
     event.preventDefault();
     
     const name = document.getElementById("name").value;
@@ -49,6 +49,7 @@ form.addEventListener("submit", async function (event) {
     const recieveComment = await nateBandSiteAPI.postComment(formData);
     formCommentArray.push(recieveComment);
 
+    // resets the form
     form.reset();
     addDataDisplay();
 });
@@ -115,6 +116,7 @@ function displayComment() {
 
 // runs sort function and add new comments function
 function addDataDisplay() {
+  // wipes all HTML elements 
     formComments.innerHTML = "";
     sortingArray();
     displayComment();

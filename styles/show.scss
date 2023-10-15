@@ -150,6 +150,7 @@
 		height: 40px;
 		color: $primary-text-color-1;
 		font-size: 0.75rem;
+		cursor: pointer;
 		@include tablet {
 			width: 20%;
 		}
