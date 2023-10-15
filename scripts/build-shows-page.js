@@ -36,7 +36,7 @@ waitForShows()
   
   
 // api shows display to page function
-function addShows(event){
+function addShows(){
     const shows = document.querySelector(".shows");
     for(let i = 0; i < showsArray.length; i++){
         const showsCard = document.createElement("div");
@@ -86,24 +86,3 @@ function addShows(event){
     }    
 }
 
-// removes class for date venue and location titles for tablet and desktop view
-function addTabletLabel(event){
-    const tabletLabels = document.querySelectorAll(".shows__card--label");
-    for(let i = 0; i < 3; i++){
-        tabletLabels[i].classList.add("shows__card--label-tablet");
-    }
-}
-addTabletLabel()
-
-// click effect on background color
-const showItems = document.querySelectorAll(".shows__card");
-
-function clickOnRow(event) {
-    for (let i = 0; i < showItems.length; i++) {
-        showItems[i].classList.remove("shows__card--selected");
-    }
-    event.currentTarget.classList.add("shows__card--selected");
-}
-for (let i = 0; i < showItems.length; i++) {
-    showItems[i].addEventListener("click", clickOnRow);
-}

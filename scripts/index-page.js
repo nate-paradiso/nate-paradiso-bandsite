@@ -42,16 +42,22 @@ form.addEventListener("submit", async function (event) {
     const name = document.getElementById("name").value;
     const comment = document.getElementById("comment").value;
 
+    // Validates the form has text with the submit event handler.  
+    // The function is passed in here but is at the
+    // bottom of the page
+    if (formValidation()){
     const formData = {
         name, 
         comment,
     };
-    const recieveComment = await nateBandSiteAPI.postComment(formData);
-    formCommentArray.push(recieveComment);
+    const receiveComment = await nateBandSiteAPI.postComment(formData);
+    formCommentArray.push(receiveComment);
 
     // resets the form
-    form.reset();
+    // calls the function addDataDisplay which sorts the displays the data
     addDataDisplay();
+  }
+  form.reset();
 });
 
 
@@ -64,9 +70,6 @@ formCommentArray.sort(function(a, b) {
   return aDate - bDate;
 });
 };
-sortingArray();
-
-
 
 
 // builds new elements for display in new array
@@ -120,4 +123,15 @@ function addDataDisplay() {
     formComments.innerHTML = "";
     sortingArray();
     displayComment();
+}
+
+// function to validate the form has text before it is submitted
+function formValidation(){
+  let formName = document.forms["myForm"]["name"].value;
+  let formComment = document.forms["myForm"]["comment"].value;
+  if ( formName == "" || formComment == "") {
+    alert("Name and comment must be filled out");
+    return false;
+  }else 
+  return true;
 }

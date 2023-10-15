@@ -53,15 +53,5 @@ export class BandSiteAPI {
 
 
 
-// const postComment = async () => {
-//     try {
-//         const comment = await axios.post(`${baseURL}/comment${apiKey}`, COMMENTDATA);
-//         console.log(comment.data);
-//     }
-//     catch(error) {
-//     console.log(error)
-//     }
-// }
-
 
 

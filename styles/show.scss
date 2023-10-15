@@ -29,6 +29,13 @@
 			margin: 12rem 0rem 0rem 4rem;
 		}
 	}
+	&__container {
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
 	&__title {
 		color: $primary-text-color-1;
 		@include title;
@@ -47,10 +54,8 @@
 	&__sound-cloud {
 		padding: 1rem;
 		@include tablet {
-			padding: 1rem 20rem 1rem 3rem;
-		}
-		@include desktop {
-			display: none;
+			padding: 1rem 4rem 1rem 0rem;
+			width: 50%;
 		}
 	}
 	&__sound-cloud-container {
@@ -115,7 +120,6 @@
 		margin-bottom: 1rem;
 	}
 }
-
 .shows__card {
 	padding: 1rem 1rem 1rem 1rem;
 	border-bottom: solid 2px $outline-color;
@@ -158,14 +162,11 @@
 			width: 17%;
 		}
 	}
-	&--selected {
-		background-color: $outline-color;
-	}
 	@include tablet {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		margin: 0rem 2rem 1rem 2rem;
+		margin: 0rem 2rem 0rem 2rem;
 		align-items: end;
 	}
 	&--label-tablet {
