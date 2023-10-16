@@ -131,6 +131,9 @@
 		font-size: 0.75rem;
 		color: $primary-text-color-2;
 		font-weight: 600;
+		@include tablet {
+			display: none;
+		}
 	}
 	&--label-display {
 		display: block;
@@ -180,5 +183,55 @@
 	}
 	@include desktop {
 		width: 95%;
+	}
+}
+.shows__card-labels {
+	@include tablet {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 55%;
+		margin: 0rem 0rem 0rem 3rem;
+		@include desktop {
+			margin: 0rem 0rem 0rem 3rem;
+			width: 64%;
+		}
+	}
+	&--venue-tablet {
+		display: none;
+		@include tablet {
+			display: flex;
+			text-transform: uppercase;
+			font-size: 0.75rem;
+			color: #afafaf;
+			font-weight: 600;
+			margin-left: 1rem;
+		}
+	}
+	&--date-tablet {
+		display: none;
+		@include tablet {
+			display: flex;
+			text-transform: uppercase;
+			font-size: 0.75rem;
+			color: #afafaf;
+			font-weight: 600;
+		}
+	}
+	&--location-tablet {
+		display: none;
+		@include tablet {
+			display: flex;
+			text-transform: uppercase;
+			font-size: 0.75rem;
+			color: #afafaf;
+			font-weight: 600;
+			margin-right: 0.5rem;
+		}
+	}
+}
+.shows__card-labels--none {
+	@include tablet {
+		display: none;
 	}
 }

@@ -26,6 +26,7 @@ async function waitForShows () {
     const showsArrayApi = await nateBandSiteAPI.getShows();
     showsArray = showsArrayApi.map(show => ({...show, date: formatTime(show.date),}));
     addShows();
+    addTabletLabel();
 
   }catch(error) {
     console.error(error);
@@ -42,14 +43,19 @@ function addShows(){
         const showsCard = document.createElement("div");
         const showsDateCont = document.createElement("div")
         const showsDateLabel = document.createElement("p");
+        const showsDateLabelTablet = document.createElement("p");
         const showsDate = document.createElement("p");
-        const showsVenueCont = document.createElement("div")
+        const showsVenueCont = document.createElement("div");
         const showsVenueLabel = document.createElement("p");
+        const showsVenueLabelTablet = document.createElement("p")
         const showsVenue = document.createElement("p");
-        const showsLocationCont = document.createElement("div")
+        const showsLocationCont = document.createElement("div");
         const showsLocationLabel = document.createElement("p");
+        const showsLocationLabelTablet = document.createElement("p");
         const showsLocation = document.createElement("p");
+
         const buyNowButton = document.createElement("button");
+        const showsLabelContainer = document.createElement("div")
 
         showsCard.classList.add("shows__card");
         showsDateCont.classList.add("shows__card-item");
@@ -61,16 +67,27 @@ function addShows(){
         showsDate.classList.add("shows__card--date");
         showsVenue.classList.add("shows__card--text");
         showsLocation.classList.add("shows__card--text");
+        showsLabelContainer.classList.add("shows__card-labels")
+        // showsLabelContainer.classList.add("shows__card-labels-none")
+        showsDateLabelTablet.classList.add("shows__card-labels--date-tablet")
+        showsVenueLabelTablet.classList.add("shows__card-labels--venue-tablet")
+        showsLocationLabelTablet.classList.add("shows__card-labels--location-tablet")
         buyNowButton.classList.add("shows__card--buy-button");
 
         showsDateLabel.innerText = showsArray[i].dateLabel || "date";
+        showsDateLabelTablet.innerText = showsArray[i].dateLabel || "date";
         showsDate.innerText = showsArray[i].date;
         showsVenueLabel.innerText = showsArray[i].venueLabel || "venue";
+        showsVenueLabelTablet.innerText = showsArray[i].venueLabel || "venue";
         showsVenue.innerText = showsArray[i].place;
         showsLocationLabel.innerText = showsArray[i].locationLabel || "location";
+        showsLocationLabelTablet.innerText = showsArray[i].locationLabel || "location";
         showsLocation.innerText = showsArray[i].location;
         buyNowButton.innerText = showsArray[i].button || "BUY TICKETS";
 
+        showsLabelContainer.appendChild(showsDateLabelTablet);
+        showsLabelContainer.appendChild(showsVenueLabelTablet);
+        showsLabelContainer.appendChild(showsLocationLabelTablet);
         showsDateCont.appendChild(showsDateLabel);
         showsDateCont.appendChild(showsDate);
         showsVenueCont.appendChild(showsVenueLabel);
@@ -82,7 +99,16 @@ function addShows(){
         showsCard.appendChild(showsLocationCont);
         showsCard.appendChild(buyNowButton);
 
+        shows.appendChild(showsLabelContainer);
         shows.appendChild(showsCard);
+
     }    
+}
+
+function addTabletLabel(){
+  const tabletLabels = document.querySelectorAll(".shows__card-labels");
+  for(let i = 1; i < tabletLabels.length; i++){
+    tabletLabels[i].classList.add("shows__card-labels--none");
+  }
 }
 
