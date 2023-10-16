@@ -68,7 +68,6 @@ function addShows(){
         showsVenue.classList.add("shows__card--text");
         showsLocation.classList.add("shows__card--text");
         showsLabelContainer.classList.add("shows__card-labels")
-        // showsLabelContainer.classList.add("shows__card-labels-none")
         showsDateLabelTablet.classList.add("shows__card-labels--date-tablet")
         showsVenueLabelTablet.classList.add("shows__card-labels--venue-tablet")
         showsLocationLabelTablet.classList.add("shows__card-labels--location-tablet")
@@ -105,6 +104,7 @@ function addShows(){
     }    
 }
 
+// shows labels for tablet and desktop view
 function addTabletLabel(){
   const tabletLabels = document.querySelectorAll(".shows__card-labels");
   for(let i = 1; i < tabletLabels.length; i++){
